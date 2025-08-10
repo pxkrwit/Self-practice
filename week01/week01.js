@@ -1,42 +1,41 @@
-//B
+// 1.สร้าง array ที่ชื่อ colors เก็บชื่อสีอย่างน้อย 5 สี จากนั้นพิมพ์ความยาวของ array และพิมพ์สีแรกกับสีสุดท้ายออกมา
+let colors = ['red','blue','yellow','green','orange']
+console.log(colors.length)
+console.log(colors[0])
+console.log(colors[colors.length - 1])
 
-let arr1 = ['tan', 100 ,true, NaN , undefined ] // Main array
 
-console.log(arr1.length) // 1.Print length of arry
-console.log(arr1[0]) // 2.Print first array
-console.log(arr1[arr1.length - 1]) // 3.Print last array
 
-arr1.push(['arm','euro'],{name : "pluem"}) // Add new array and object to main array
+// 2.สร้าง array ที่มีข้อมูลหลายประเภท (string, number, boolean, null) จากนั้นใช้ push เพิ่ม object { type: "mixed" } และ array ['extra1','extra2'] เข้าไป แล้วพิมพ์ array ทั้งหมด
+let arr1 = ["heelo" , 59 , true , null]
+arr1.push({ type: "mixed" },['extra1','extra2'])
+console.log(arr1)
 
-console.log(arr1 ) // 4.Print new array after add new array
 
-// Print first - last array by loop
-for ( i = 0 ; i <= arr1.length ; i++) {
-    console.log(arr1[i])
-} 
-    
-arr1.pop() // Remove last array
-console.log(arr1) // 6.Print new array after remove object from array
 
-let str = "hello World"
-const strCh = [...str]
-console.log(strCh)
-
-// Create new array
-let arr2 = new Array()
+// 3.เขียนโค้ดลบสมาชิกสุดท้ายของ array students แล้วพิมพ์ array หลังจากลบ
+let arr2 = ['Tan','Arm','March','Nena','Win']
+arr2.pop()
 console.log(arr2)
-let arr3 = new Array(5)
-console.log(arr3)
 
-let arr4 = Array.of(10) // Create array with item 10
-console.log(arr4)
-let arr5 = Array.from(arr4) // Coppy arr4
-console.log(arr4)
 
-// นิพจน์ (expression) ต้องคืนค่าเสมอ จะเป็นอะไรก็ได้
 
-const [,,a,,...b] = [5,10,15,20,25]
-console.log(a)
-console.log(typeof a)
-console.log(b)
-console.log(typeof b)
+// 4.ให้ string "JavaScript" สร้าง array ใหม่ชื่อ letters โดยใช้ Spread operator (...) และพิมพ์ array นั้น
+let arr3 = "JavaScript"
+let letters = [...arr3]
+console.log(letters)
+
+
+
+// 5.เขียนฟังก์ชัน printFirstAndLast(arr) ที่รับ array มา 1 ตัว แล้วพิมพ์ค่าแรกกับค่าสุดท้ายของ array นั้น
+function printFirstAndLast(arr) {
+    if (arr.length === 0) {
+        console.log("Empty")
+        return
+    }
+    console.log("First :", arr[0])
+    console.log("Last :", arr[arr.length - 1])
+}
+printFirstAndLast([10, 20, 30, 40, 50])
+printFirstAndLast(["apple", "banana", "cherry"])
+printFirstAndLast([])
